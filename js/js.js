@@ -9,6 +9,7 @@ function roteiros(){
     document.write("<br><b>O nome de cada cidade e a característica do Roteiro A:</b>");
     var proximo = 1;
     var n=1;
+    var totLocaisA = 0;
     document.write("<ul>");
     while(n<=tamanho){
         var primeiro = atividade.indexOf('*',proximo);
@@ -21,10 +22,12 @@ function roteiros(){
                 var conteudo = roteiroA[1].split("<br>");
                 var listConteudo = conteudo[1].split(";");
                 var qtConteudo = listConteudo.length;
+                totLocaisA = totLocaisA + parseInt(qtConteudo);
                 document.write("Nesse roteiro são listados: " + qtConteudo +" locais")
         n = n +1; 
     }
     document.write("</ul>");
+    document.write("<b>A soma de todos os locais dos Roteiros A é: </b>" + totLocaisA + "<br>");
 // Mostrando os locais do centro de São Paulo
     var roteiroSP = quebrei[1].split("#");
     var centroSP = roteiroSP[2].split("<br>");
@@ -44,7 +47,7 @@ function roteiros(){
     var conteudocentroLV = centroLV[1].split(";");
     var qtConteudoLV = conteudocentroLV.length-1;
     var n = 1;
-    document.write("Os locais de Downtown de Las Vegas são:<ul>");
+    document.write("Os locais de Downtown Las Vegas são:<ul>");
     while(n<qtConteudoLV){
         document.write("<li>" + conteudocentroLV[n] + "</li>")
         n = n+1;
